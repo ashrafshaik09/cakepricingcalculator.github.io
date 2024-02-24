@@ -1,0 +1,525 @@
+@import url(https://fonts.googleapis.com/css?family=Shantell+Sans);
+@import url(https://fonts.googleapis.com/css?family=Merienda);
+@import url(https://fonts.googleapis.com/css?family=Chakra+Petch);
+
+
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('images/cool-background-1.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.main {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.component1,
+.component2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h1 {
+    font-size: 50px;
+    font-family: 'Merienda', cursive;
+    text-align: center;
+}
+
+.component1 h2,
+.component2 h2 {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Shantell Sans';
+    font-size: larger;
+}
+
+table,
+th,
+td {
+    border: 2px solid #000000;
+    padding: 40px;
+    text-align: center;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #92a192;
+    color: white;
+}
+
+
+/* Add button */
+
+button {
+ position: relative;
+ border: none;
+ background: transparent;
+ padding: 0;
+ margin-left: 80px;
+ cursor: pointer;
+ outline-offset: 4px;
+ transition: filter 250ms;
+user-select: none;
+-webkit-user-select: none;
+ touch-action: manipulation;
+ align-items: center;
+}
+
+.shadow {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: hsl(0deg 0% 0% / 0.25);
+ will-change: transform;
+ transform: translateY(2px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: linear-gradient(
+    to left,
+    hsl(233, 100%, 16%) 0%,
+    hsl(237, 100%, 32%) 8%,
+    hsl(224, 100%, 32%) 92%,
+    hsl(238, 100%, 16%) 100%
+  );
+}
+
+.front {
+ display: block;
+ position: relative;
+ padding: 12px 27px;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ color: white;
+ background: hsl(212, 100%, 47%);
+ will-change: transform;
+ transform: translateY(-4px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+button:hover {
+ filter: brightness(110%);
+}
+
+button:hover .front {
+ transform: translateY(-6px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .front {
+ transform: translateY(-2px);
+ transition: transform 34ms;
+}
+
+button:hover .shadow {
+ transform: translateY(4px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .shadow {
+ transform: translateY(1px);
+ transition: transform 34ms;
+}
+
+button:focus:not(:focus-visible) {
+ outline: none;
+}
+
+/* Add button end */
+
+
+/* Table button */
+
+#ingredientTableBody button {
+    margin-left: -20px;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+   }
+   
+   #ingredientTableBody button, #ingredientTableBody button span {
+    transition: 200ms;
+   }
+   
+   #ingredientTableBody button .text {
+    transform: translateX(35px);
+    color: white;
+    font-weight: bold;
+   }
+   
+   #ingredientTableBody button .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   
+   #ingredientTableBody button svg {
+    width: 15px;
+    fill: #eee;
+   }
+   
+   #ingredientTableBody button:hover {
+    background: #ff3636;
+   }
+   
+   #ingredientTableBody button:hover .text {
+    color: transparent;
+   }
+   
+   #ingredientTableBody button:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+   }
+   
+   #ingredientTableBody button:focus {
+    outline: none;
+   }
+   
+   #ingredientTableBody button:active .icon svg {
+    transform: scale(0.8);
+   }
+
+    /* Table button end */
+
+    /* Ingredient inputs */
+    .input-container {
+        position: relative;
+        width: clamp(100px, 100%, 200px);
+        font-family: 'Chakra Petch', sans-serif;
+      }
+      
+      .input {
+        padding: 10px;
+        height: 40px;
+        width: clamp(100px, 100%, 200px);
+        border: 2px solid #0B2447;
+        border-top: none;
+        font-size: 16px;
+        background: transparent;
+        outline: none;
+        box-shadow: 7px 7px 0px 0px #0B2447;
+        transition: all 0.5s;
+        font-family: 'Chakra Petch', sans-serif;
+      }
+      
+      .input:focus {
+        box-shadow: none;
+        transition: all 0.5s;
+      }
+      
+      .label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #0B2447;
+        transition: all 0.5s;
+        transform: scale(0);
+        z-index: -1;
+      }
+      
+      .input-container .top-line {
+        position: absolute;
+        content: "";
+        background-color: #0B2447;
+        width: 100%;
+        height: 2px;
+        right: 0;
+        top: 0;
+        transition: all 0.5s;
+      }
+      
+      .input-container input[type="text"]:focus~.top-line 
+      .input-container input[type="number"]:focus~.top-line
+      {
+        width: 35%;
+        transition: all 0.5s;
+      }
+      
+      .input-container .under-line {
+        position: absolute;
+        content: "";
+        background-color: #0B2447;
+        width: 0%;
+        height: 2px;
+        right: 0;
+        bottom: 0;
+        transition: all 0.5s;
+      }
+      
+      .input-container input[type="text"]:focus~.under-line 
+      .input-container input[type="number"]:focus~.under-line{
+        width: 100%;
+        transition: all 0.5s;
+      }
+      
+      .input-container input[type="text"]:focus~.label 
+      .input-container input[type="number"]:focus~.label {
+        top: -10px;
+        transform: scale(1);
+        transition: all 0.5s;
+      }
+
+        /* Ingredient inputs end */
+
+
+
+        /* Radio buttons */
+        .units {
+          font-family: 'Chakra Petch', sans-serif;
+            display: flex;
+            position: relative;
+            background-color: #fff;
+            box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+            padding: 0.75rem;
+            border-radius: 99px;
+            overflow: hidden;
+            align-items: center;
+            margin-left: 30px;
+          }
+          
+          .units * {
+            z-index: 2;
+          }
+          
+          .container input[type="radio"] {
+            display: none;
+          }
+          
+          .tab {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 30px;
+            width: 50px;
+            font-size:medium;
+            color: black;
+            font-weight: 500;
+            border-radius: 99px;
+            cursor: pointer;
+            transition: color 0.15s ease-in;
+          }
+          
+          
+          .container input[type="radio"]:checked + label {
+            color: #185ee0;
+          }
+          
+          .container input[type="radio"]:checked + label > .notification {
+            background-color: #185ee0;
+            color: #fff;
+            margin: 0px;
+          }
+          
+          .container input[id="ml"]:checked ~ .glider {
+            transform: translateX(0);
+          }
+          
+          .container input[id="g"]:checked ~ .glider {
+            transform: translateX(100%);
+          }
+          
+          .container input[id="unit"]:checked ~ .glider {
+            transform: translateX(200%);
+          }
+          
+          .glider {
+            position: absolute;
+            display: flex;
+            height: 30px;
+            width: 50px;
+            background-color: #e6eef9;
+            z-index: 1;
+            border-radius: 99px;
+            transition: 0.25s ease-out;
+          }
+          
+          @media (max-width: 700px) {
+           
+            .unit {
+              transform: scale(0.6);
+            }
+          }
+          
+
+
+
+/********************************************* MEDIA QUERIES ********************************************************/
+ @media (max-width: 930px){
+    .main {
+        flex-direction: column;
+    }
+    .component1, .component2 {
+        width: 100%;
+    }
+    .component1 {
+        margin-bottom: 20px;
+    }
+    .component2 {
+        margin-top: 20px;
+    }
+    .title h1 {
+        font-size: 40px;
+    }
+    .component1 h2, .component2 h2 {
+        font-size: 25px;
+    }
+    table {
+        font-size: medium;
+    }
+    .input {
+        width: 100%;
+    }
+    .input-container {
+        width: 100%;
+    }
+    .units {
+      align-items: center;
+      margin-left: 50px;
+    }
+    .tab {
+        width: 40px;
+        height: 20px;
+        font-size: small;
+    }
+    .glider {
+        height: 20px;
+        width: 40px;
+    }
+ }
+
+ @media (max-width: 430px) {
+    .title h1 {
+        font-size: 30px;
+    }
+    .component1 h2, .component2 h2 {
+        font-size: 20px;
+    }
+    table {
+       
+        font-size: small;
+    }
+
+    table,
+    th,
+    td {
+        border: 2px solid #000000;
+        padding: 10px; /* Adjusted padding for smaller screens */
+        text-align: center;
+    }
+}
+
+/* Media queries end */
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to right, #c5e2eb, #e8d1e8);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 1px;
+  font-family: 'Chakra Petch', sans-serif;
+  border: none; /* Remove the border */
+  border-radius: 0; /* Remove the border radius */
+  box-shadow: 0 0 0 0; /* Remove the box shadow */
+  margin: 0; /* Remove the margin */
+  padding: 0; /* Remove the padding */
+  overflow: hidden; /* Remove the overflow */
+  }
+
+  .footer p {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .footer a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+
+  .footer a:hover {
+    color: #185ee0;
+  }
+
+  .footer p {
+    margin: 0;
+    padding: 10px;
+  }
+
+  .footer a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+
+  .footer a:hover {
+    color: #185ee0;
+  }
+
+

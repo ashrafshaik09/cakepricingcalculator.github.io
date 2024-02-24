@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Pricing Calculator</title>
+    <link icon="icon" href="images/logo.png" rel="icon">
+    <link rel="stylesheet" href="index.css" type="text/css">
+</head>
+
+    <body class="background-image">
+    <div class="title">
+        <h1><u>Cake Pricing Calculator</u></h1>
+    </div>
+    <div class="main">
+
+        <div class="component1">
+            <div class="AddIngredients">
+                <h2>Add Ingredients</h2> 
+                <div class="input-container">
+                    <label for="name" class="label">Ingredient Name</label>
+                    <input type="text" id="name" name="text" class="input" placeholder="Ingredient Name">
+                    <label class="label">Ingredient Name</label>
+                    <div class="top-line"></div>
+                    <div class="under-line"></div>
+                </div>
+                <br><br>
+                <div class="input-container">
+                    <input type="number" id="quantity" name="text" class="input" placeholder="Quantity">
+                    <label for="price" class="label">Price</label>
+                    <label class="label">Quantity</label>
+                    <div class="top-line"></div>
+                    <div class="under-line"></div>
+                </div>
+                <br>
+                <!-- radio buttons -->
+                <div class="input-group">
+                    <div class="container">
+                        <div class="units">
+                            <input type="radio" id="ml" name="unit" value="ml">
+                            <label class="tab" for="ml">ml</span></label>
+                            <input type="radio" id="g" name="unit" value="g">
+                            <label class="tab" for="g">g</label>
+                            <input type="radio" id="unit" name="unit" value="units">
+                            <label class="tab" for="unit">unit</label>
+                            <span class="glider"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Radio buttons end --><br>
+                <div class="input-container">
+                    <input type="number" id="price" name="text" class="input" placeholder="Price">
+                    <label class="label">Price</label>
+                    <div class="top-line"></div>
+                    <div class="under-line"></div>
+                </div>
+
+                <br><br>
+                <button id="add" >
+                    <span class="shadow"></span>
+                    <span class="edge"></span>
+                    <span class="front text"> Add
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div class="component2">
+            <div>
+                <h2>List</h2>
+                <table id="ingredientTable">
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>USED</th>
+                            <th>COST (₹)</th>
+                            <th>REMOVE</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ingredientTableBody">
+                        <!-- Table rows will be dynamically added here -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Total</td>
+                            <td id="total">Rs. 0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br>
+    <script src="index.js"></script>
+    <footer>
+        <div class="footer">
+            <p>A propriety of <a href="https://www.instagram.com/al_aromaz/">Al Aromaz</a></p>
+        </div>
+    </footer>
+           
+        
+</body>
+</html>
